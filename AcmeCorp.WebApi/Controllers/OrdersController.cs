@@ -20,7 +20,7 @@ namespace AcmeCorp.WebApi.Controllers
         /// </summary>
         /// <param name="orderRepository"></param>
         /// <param name="logger"></param>
-        public OrdersController(IOrderRepository orderRepository, ILogger<ContactsController> logger)
+        public OrdersController(IOrderRepository orderRepository, ILogger<OrdersController> logger)
         {
             _orderRepository = orderRepository;
             _logger = logger;

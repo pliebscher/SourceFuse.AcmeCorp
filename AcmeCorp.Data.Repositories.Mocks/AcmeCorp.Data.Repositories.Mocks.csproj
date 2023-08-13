@@ -7,9 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AcmeCorp.Data.Context\AcmeCorp.Data.Context.csproj" />
-    <ProjectReference Include="..\AcmeCorp.Data.Core\AcmeCorp.Data.Core.csproj" />
     <ProjectReference Include="..\AcmeCorp.Data.Models\AcmeCorp.Data.Models.csproj" />
+    <ProjectReference Include="..\AcmeCorp.Data.Repositories.Interfaces\AcmeCorp.Data.Repositories.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -17,9 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AcmeCorp.Data.Context\AcmeCorp.Data.Context.csproj" />
-    <ProjectReference Include="..\AcmeCorp.Data.Core\AcmeCorp.Data.Core.csproj" />
     <ProjectReference Include="..\AcmeCorp.Data.Models\AcmeCorp.Data.Models.csproj" />
+    <ProjectReference Include="..\AcmeCorp.Data.Repositories.Interfaces\AcmeCorp.Data.Repositories.Interfaces.csproj" />
+    <ProjectReference Include="..\AcmeCorp.Data.Repositories.Mocks\AcmeCorp.Data.Repositories.Mocks.csproj" />
+    <ProjectReference Include="..\AcmeCorp.WebApi\AcmeCorp.WebApi.csproj" />
   </ItemGroup>
 
 </Project>
