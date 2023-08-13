@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Mvc;
 
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
-//using AcmeCorp.Data.Context;
 using AcmeCorp.Data.Models;
 using AcmeCorp.Data.Repositories.Interfaces;
 
@@ -26,15 +18,15 @@ namespace AcmeCorp.WebApi.Controllers
             _logger = logger;
         }
 
-        // GET: api/Customers
         [HttpGet]
+        [EndpointDescription("Get all Customers")]
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomer()
         {
             return await _customerRepository.GetAllCustomers();
         }
 
-        // GET: api/Customers/5
         [HttpGet("{id}")]
+        [EndpointDescription("Get a single Customer")]
         public async Task<ActionResult<Customer>> GetCustomer(int id)
         {
             var customer = await _customerRepository.GetCustomer(id);
@@ -48,9 +40,8 @@ namespace AcmeCorp.WebApi.Controllers
             return customer;
         }
 
-        // PUT: api/Customers/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
+        [EndpointDescription("Update a Customer")]
         public async Task<IActionResult> PutCustomer(Customer customer)
         {
             customer = await _customerRepository.UpdateCustomer(customer);
@@ -60,17 +51,16 @@ namespace AcmeCorp.WebApi.Controllers
             return NoContent();
         }
 
-        // POST: api/Customers
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
+        [EndpointDescription("Create a new Customer")]
         public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
         {
             Customer newCustomer = await _customerRepository.AddCustomer(customer);
             return CreatedAtAction("GetCustomer", new { id = newCustomer.Id }, newCustomer);
         }
-
-        // DELETE: api/Customers/5
+ 
         [HttpDelete("{id}")]
+        [EndpointDescription("Delete a Customer")]
         public async Task<IActionResult> DeleteCustomer(int id)
         {
             if (await _customerRepository.DeleteCustomer(id) == false)
@@ -80,7 +70,5 @@ namespace AcmeCorp.WebApi.Controllers
 
             return NoContent();
         }
-
     }
-
 }

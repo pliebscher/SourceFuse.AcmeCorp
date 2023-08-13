@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+
 using AcmeCorp.Data.Models;
 
 namespace AcmeCorp.Data.Context
@@ -21,6 +18,8 @@ namespace AcmeCorp.Data.Context
         public DbSet<Product> Product { get; set; }
 
         public DbSet<Order> Order { get; set; }
+
+        public DbSet<OrderItem> OrderItem { get; set; }
 
     }
 }

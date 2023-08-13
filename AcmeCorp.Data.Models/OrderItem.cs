@@ -3,16 +3,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AcmeCorp.Data.Models
 {
-    public class Order
+    public class OrderItem
     {
         [Key]
         [Required]
         public int Id { get; set; }
 
         [Required]
-        [ForeignKey(nameof(Contact.Id))]
-        public int ShipToContactId { get; set; }
+        [ForeignKey(nameof(Order.Id))]
+        public int OrderId { get; set; }
 
-        public List<OrderItem> Items { get; set; } = new List<OrderItem>();
+        [Required]
+        [ForeignKey(nameof(Product.Id))]
+        public int ProductId { get; set; }
+
     }
 }

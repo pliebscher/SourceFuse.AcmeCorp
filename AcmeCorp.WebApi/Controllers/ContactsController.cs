@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using AcmeCorp.Data.Models;
+using AcmeCorp.Data.Repositories.Interfaces;
+using AcmeCorp.Data.Repositories;
+
 
 namespace AcmeCorp.WebApi.Controllers
 {
@@ -8,36 +11,37 @@ namespace AcmeCorp.WebApi.Controllers
     [ApiController]
     public class ContactsController : ControllerBase
     {
-        // GET: api/<ContactsController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+
+        private readonly IContactRepository _contactRepository;
+        private readonly ILogger _logger;
+
+        public ContactsController(IContactRepository contactRepository, ILogger<ContactsController> logger)
         {
-            return new string[] { "value1", "value2" };
+            _contactRepository = contactRepository;
+            _logger = logger;
         }
 
-        // GET api/<ContactsController>/5
+        [HttpGet("{customerId}")]
+        [EndpointDescription("Get all Contacts for a Customer")]
+        public async Task<ActionResult<IEnumerable<Contact>>> GetContacts(int customerId)
+        {
+            return await _contactRepository.GetContacts(customerId);
+        }
+
         [HttpGet("{id}")]
-        public string Get(int id)
+        [EndpointDescription("Get a single Contact")]
+        public async Task<ActionResult<Contact>> GetContact(int id)
         {
-            return "value";
+            var contact = await _contactRepository.GetContact(id);
+
+            if (contact == null)
+            {
+                _logger.LogWarning("Contact Not Found: " + id);
+                return NotFound();
+            }
+
+            return contact;
         }
 
-        // POST api/<ContactsController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/<ContactsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<ContactsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }

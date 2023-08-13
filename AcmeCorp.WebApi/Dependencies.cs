@@ -16,7 +16,10 @@ namespace AcmeCorp.WebApi
         {
 
             services.AddScoped<AcmeCorpDataContext, AcmeCorpDataContext>();
+
             services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
 
         }
 
