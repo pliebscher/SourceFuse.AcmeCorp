@@ -17,7 +17,7 @@ namespace AcmeCorp.Data.Repositories.Interfaces
         /// </summary>
         /// <param name="Id"></param>
         /// <returns>A Contact</returns>
-        public Task<Contact> GetContact(int Id);
+        public Task<Contact> GetContact(int id);
 
         /// <summary>
         /// Update a Customer
@@ -32,12 +32,6 @@ namespace AcmeCorp.Data.Repositories.Interfaces
         /// <param name="contact"></param>
         /// <returns>True if delete was successful</returns>
         public Task<bool> DeleteContact(int id);
-
-        /// <summary>
-        /// Fetch all the Contacts for a company...
-        /// </summary>
-        /// <returns>All of em...</returns>
-        public Task<List<Contact>> GetContacts(int customerId);
 
     }
 }

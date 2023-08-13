@@ -11,29 +11,46 @@ namespace AcmeCorp.Data.Repositories
         {
         }
 
-        public Task<Contact> AddContact(Contact contact)
+        public async Task<Contact> AddContact(Contact contact)
         {
-            throw new NotImplementedException();
+            Context.Contact.Add(contact);
+            await Context.SaveChangesAsync();
+            return contact;
         }
 
-        public Task<bool> DeleteContact(int id)
+        public async Task<bool> DeleteContact(int id)
         {
-            throw new NotImplementedException();
+            var contact = await Context.Contact.FindAsync(id);
+
+            if (contact == null)
+                return false;
+
+            Context.Contact.Remove(contact);
+            await Context.SaveChangesAsync();
+
+            return true;
         }
 
-        public Task<Contact> GetContact(int Id)
+        public async Task<Contact> GetContact(int id)
         {
-            throw new NotImplementedException();
+            return await Context.Contact.FindAsync(id);
         }
 
-        public Task<List<Contact>> GetContacts(int companyId)
+        public async Task<Contact> UpdateContact(Contact contact)
         {
-            throw new NotImplementedException();
-        }
+            Context.Entry(contact).State = EntityState.Modified;
 
-        public Task<Contact> UpdateContact(Contact contact)
-        {
-            throw new NotImplementedException();
+            try
+            {
+                await Context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                // TODO: This needs to be handled...
+                throw;
+            }
+
+            return contact;
         }
     }
 }

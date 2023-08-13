@@ -8,9 +8,7 @@ namespace AcmeCorp.Data.Repositories
 {
     public class CustomerRepository : AcmeCorpDataRepository, ICustomerRepository
     {
-        public CustomerRepository(AcmeCorpDataContext context) : base(context)
-        {
-        }
+        public CustomerRepository(AcmeCorpDataContext context) : base(context) { }
 
         public async Task<Customer> AddCustomer(Customer customer)
         {
