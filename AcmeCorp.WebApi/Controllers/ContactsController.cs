@@ -21,13 +21,6 @@ namespace AcmeCorp.WebApi.Controllers
             _logger = logger;
         }
 
-        [HttpGet("{customerId}")]
-        [EndpointDescription("Get all Contacts for a Customer")]
-        public async Task<ActionResult<IEnumerable<Contact>>> GetContacts(int customerId)
-        {
-            return await _contactRepository.GetContacts(customerId);
-        }
-
         [HttpGet("{id}")]
         [EndpointDescription("Get a single Contact")]
         public async Task<ActionResult<Contact>> GetContact(int id)
