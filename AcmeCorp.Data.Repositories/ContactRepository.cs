@@ -38,6 +38,8 @@ namespace AcmeCorp.Data.Repositories
 
         public async Task<Contact> UpdateContact(Contact contact)
         {
+            // TODO: Mahe sure the contact exists...
+
             Context.Entry(contact).State = EntityState.Modified;
 
             try

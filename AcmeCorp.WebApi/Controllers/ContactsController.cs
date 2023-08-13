@@ -4,7 +4,6 @@ using AcmeCorp.Data.Models;
 using AcmeCorp.Data.Repositories.Interfaces;
 using AcmeCorp.Data.Repositories;
 
-
 namespace AcmeCorp.WebApi.Controllers
 {
     [Route("api/[controller]")]
@@ -34,6 +33,37 @@ namespace AcmeCorp.WebApi.Controllers
             }
 
             return contact;
+        }
+
+        [HttpPut]
+        [EndpointDescription("Update a Contact")]
+        public async Task<IActionResult> PutContact(Contact contact)
+        {
+            contact = await _contactRepository.UpdateContact(contact);
+
+            if (contact == null) { return NotFound(); }
+
+            return NoContent();
+        }
+
+        [HttpPost]
+        [EndpointDescription("Create a new Contact")]
+        public async Task<ActionResult<Customer>> PostContact(Contact contact)
+        {
+            Contact newContact = await _contactRepository.AddContact(contact);    
+            return CreatedAtAction("GetCustomer", new { id = newContact.Id }, newContact);
+        }
+
+        [HttpDelete("{id}")]
+        [EndpointDescription("Delete a Contact")]
+        public async Task<IActionResult> DeleteContact(int id)
+        {
+            if (await _contactRepository.DeleteContact(id) == false)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
         }
 
     }
