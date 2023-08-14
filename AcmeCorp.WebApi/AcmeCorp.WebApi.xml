@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AcmeCorp.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:AcmeCorp.WebApi.Controllers.ContactsController">
+            <summary>
+            Manage Customer Contacts
+            </summary>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.ContactsController.#ctor(AcmeCorp.Data.Repositories.Interfaces.IContactRepository,Microsoft.Extensions.Logging.ILogger{AcmeCorp.WebApi.Controllers.ContactsController})">
+            <summary>
+            The .ctor
+            </summary>
+            <param name="contactRepository"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.ContactsController.GetContact(System.Int32)">
+            <summary>
+            Get a single Contact
+            </summary>
+            <param name="id"></param>
+            <returns>A Contact</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.ContactsController.PutContact(AcmeCorp.Data.Models.Contact)">
+            <summary>
+            Update a Contact
+            </summary>
+            <param name="contact"></param>
+            <returns>The updated Contact</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.ContactsController.PostContact(AcmeCorp.Data.Models.Contact)">
+            <summary>
+            Create a new Contact
+            </summary>
+            <param name="contact"></param>
+            <returns>The new Contact</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.ContactsController.DeleteContact(System.Int32)">
+            <summary>
+            Delete a Contact
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AcmeCorp.WebApi.Controllers.CustomersController">
+            <summary>
+            Manage Customers
+            </summary>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.#ctor(AcmeCorp.Data.Repositories.Interfaces.ICustomerRepository,Microsoft.Extensions.Logging.ILogger{AcmeCorp.WebApi.Controllers.CustomersController})">
+            <summary>
+            The .ctor
+            </summary>
+            <param name="customerRepository"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.GetCustomers">
+            <summary>
+            Get all Customers
+            </summary>
+            <returns>A list of Customers</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.GetCustomer(System.Int32)">
+            <summary>
+            Get a single Customer
+            </summary>
+            <param name="id"></param>
+            <returns>A Customer</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.PutCustomer(AcmeCorp.Data.Models.Customer)">
+            <summary>
+            Update a Customer
+            </summary>
+            <param name="customer"></param>
+            <returns>The updated Customer</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.PostCustomer(AcmeCorp.Data.Models.Customer)">
+            <summary>
+            Create a new Customer
+            </summary>
+            <param name="customer"></param>
+            <returns>The new Customer</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.DeleteCustomer(System.Int32)">
+            <summary>
+            Delete a Customer
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AcmeCorp.WebApi.Controllers.OrderItemsController">
+            <summary>
+            Add/Remove Items in a Order
+            </summary>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.OrderItemsController.#ctor(AcmeCorp.Data.Repositories.Interfaces.IOrderRepository,AcmeCorp.Data.Repositories.Interfaces.IOrderItemRepository,Microsoft.Extensions.Logging.ILogger{AcmeCorp.WebApi.Controllers.OrderItemsController})">
+            <summary>
+            The .ctor
+            </summary>
+            <param name="orderRepository"></param>
+            <param name="orderItemRepository"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.OrderItemsController.GetOrderItems(System.Int32)">
+            <summary>
+            Get all Items in an Order
+            </summary>
+            <param name="orderId"></param>
+            <returns>List of Items in the Order</returns>
+        </member>
+        <member name="T:AcmeCorp.WebApi.Controllers.OrdersController">
+            <summary>
+            Manage Orders
+            </summary>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.OrdersController.#ctor(AcmeCorp.Data.Repositories.Interfaces.IOrderRepository,Microsoft.Extensions.Logging.ILogger{AcmeCorp.WebApi.Controllers.OrdersController})">
+            <summary>
+            The .ctor
+            </summary>
+            <param name="orderRepository"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.OrdersController.GetOrder(System.Int32)">
+            <summary>
+            Get a single Order
+            </summary>
+            <param name="id"></param>
+            <returns>An Order</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.OrdersController.CreateOrder(AcmeCorp.Data.Models.Order)">
+            <summary>
+            Create a new Order
+            </summary>
+            <param name="order"></param>
+            <returns>The new Order</returns>
+        </member>
+        <member name="T:AcmeCorp.WebApi.Controllers.ProductsController">
+            <summary>
+            Manage Products
+            </summary>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.ProductsController.#ctor(AcmeCorp.Data.Repositories.Interfaces.IProductRepository,Microsoft.Extensions.Logging.ILogger{AcmeCorp.WebApi.Controllers.CustomersController})">
+            <summary>
+            The .ctor
+            </summary>
+            <param name="productRepository"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.ProductsController.GetProducts">
+            <summary>
+            Gets all the Products for sale.
+            </summary>
+            <returns>A list of Products</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Dependencies.Register(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Register dependencies for Controller injections...
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>

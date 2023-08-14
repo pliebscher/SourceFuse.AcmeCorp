@@ -3,6 +3,9 @@
 using AcmeCorp.Data.Models;
 using AcmeCorp.Data.Repositories.Interfaces;
 
+using Swashbuckle.AspNetCore.Swagger;
+using Swashbuckle.AspNetCore.SwaggerGen;
+
 namespace AcmeCorp.WebApi.Controllers
 {
     /// <summary>
@@ -31,7 +34,7 @@ namespace AcmeCorp.WebApi.Controllers
         /// </summary>
         /// <returns>A list of Customers</returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomer()
+        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
             return await _customerRepository.GetAllCustomers();
         }
@@ -61,7 +64,7 @@ namespace AcmeCorp.WebApi.Controllers
         /// <param name="customer"></param>
         /// <returns>The updated Customer</returns>
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCustomer(Customer customer)
+        public async Task<IActionResult> UpdateCustomer(Customer customer)
         {
             customer = await _customerRepository.UpdateCustomer(customer);
 
@@ -76,7 +79,7 @@ namespace AcmeCorp.WebApi.Controllers
         /// <param name="customer"></param>
         /// <returns>The new Customer</returns>
         [HttpPost]
-        public async Task<ActionResult<Customer>> PostCustomer(Customer customer)
+        public async Task<ActionResult<Customer>> AddCustomer(Customer customer)
         {
             Customer newCustomer = await _customerRepository.AddCustomer(customer);
             return CreatedAtAction("GetCustomer", new { id = newCustomer.Id }, newCustomer);

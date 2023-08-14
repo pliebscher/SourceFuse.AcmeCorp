@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <DocumentationFile>AcmeCorp.WebApi.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

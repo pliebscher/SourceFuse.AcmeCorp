@@ -5,24 +5,37 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AcmeCorp.Data.Repositories
 {
-    public class OrderItemRepository : AcmeCorpDataContext, IOrderItemRepository
+    public class OrderItemRepository : AcmeCorpDataRepository, IOrderItemRepository
     {
-        public OrderItemRepository(DbContextOptions<AcmeCorpDataContext> options) : base(options)
+        public OrderItemRepository(AcmeCorpDataContext context) : base(context)
         {
-        }
-        public async Task<int> AddOrderItem(OrderItem item)
-        {
-            throw new NotImplementedException();
         }
 
-        public async Task<bool> DeleteOrderItem(OrderItem item)
+        public async Task<OrderItem> AddOrderItem(OrderItem item)
         {
-            throw new NotImplementedException();
+            Context.OrderItem.Add(item);
+            await Context.SaveChangesAsync();
+            return item;
+        }
+
+        public async Task<bool> DeleteOrderItem(int id)
+        {
+            var item = await Context.OrderItem.FindAsync(id);
+
+            if (item == null)
+                return false;
+
+            Context.OrderItem.Remove(item);
+            await Context.SaveChangesAsync();
+
+            return true;
         }
 
         public async Task<List<OrderItem>> GetOrderItems(int orderId)
         {
-            throw new NotImplementedException();
+            var orders = await Context.OrderItem.ToListAsync();
+            var orderItems = orders.Where((item) => item.OrderId == orderId);
+            return new List<OrderItem>(orderItems);
         }
     }
 }

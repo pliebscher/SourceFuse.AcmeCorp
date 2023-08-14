@@ -2,11 +2,12 @@
 
 using AcmeCorp.Data.Models;
 using AcmeCorp.Data.Repositories.Interfaces;
+using AcmeCorp.Data.Repositories;
 
 namespace AcmeCorp.WebApi.Controllers
 {
     /// <summary>
-    /// Add/Remove Items in a Order
+    /// Manage Orders
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -46,6 +47,34 @@ namespace AcmeCorp.WebApi.Controllers
             }
 
             return items;
+        }
+
+        /// <summary>
+        /// Add an Item to an Order
+        /// </summary>
+        /// <param name="orderItem"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<ActionResult<OrderItem>> AddOrderItem(OrderItem orderItem)
+        {
+            OrderItem newItem = await _orderItemRepository.AddOrderItem(orderItem);
+            return CreatedAtAction("GetCustomer", new { id = newItem.Id }, newItem);
+        }
+
+        /// <summary>
+        /// Delete an Item from an Order
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteOrderItem(int id)
+        {
+            if (await _orderItemRepository.DeleteOrderItem(id) == false)
+            {
+                return NotFound();
+            }
+
+            return NoContent();
         }
 
     }

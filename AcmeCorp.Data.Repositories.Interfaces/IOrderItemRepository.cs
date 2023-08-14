@@ -16,14 +16,14 @@ namespace AcmeCorp.Data.Repositories.Interfaces
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        Task<int> AddOrderItem(OrderItem item);
+        Task<OrderItem> AddOrderItem(OrderItem item);
 
         /// <summary>
         /// Delete an Item from an Order
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
-        Task<bool> DeleteOrderItem(OrderItem item);
+        Task<bool> DeleteOrderItem(int id);
 
     }
 }

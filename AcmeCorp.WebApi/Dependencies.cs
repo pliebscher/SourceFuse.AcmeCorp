@@ -21,6 +21,7 @@ namespace AcmeCorp.WebApi
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
 
         }
 

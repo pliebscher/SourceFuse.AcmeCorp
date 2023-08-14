@@ -36,7 +36,7 @@ namespace AcmeCorp.WebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AcmeCorp Demo API", Version = "v12" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AcmeCorp Demo API", Version = "2023.8.0" });
                 
                 c.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
                 {
@@ -46,6 +46,8 @@ namespace AcmeCorp.WebApi
                     In = ParameterLocation.Header,
                     Scheme = "ApiKeyScheme"
                 });
+                
+                c.IncludeXmlComments("AcmeCorp.WebApi.xml", true);
 
                 var key = new OpenApiSecurityScheme()
                 {
