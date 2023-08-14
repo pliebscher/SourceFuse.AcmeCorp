@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33927.249
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.WebApi", "AcmeCorp.WebApi\AcmeCorp.WebApi.csproj", "{88C43BCD-F8E4-4419-8857-961825DC1B5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeCorp.WebApi", "AcmeCorp.WebApi\AcmeCorp.WebApi.csproj", "{88C43BCD-F8E4-4419-8857-961825DC1B5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.Data.Models", "AcmeCorp.Data.Models\AcmeCorp.Data.Models.csproj", "{426AAF7C-C889-41FE-ACF8-63FF29DE82B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeCorp.Data.Models", "AcmeCorp.Data.Models\AcmeCorp.Data.Models.csproj", "{426AAF7C-C889-41FE-ACF8-63FF29DE82B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.Data.Context", "AcmeCorp.Data.Context\AcmeCorp.Data.Context.csproj", "{FCAF9818-0097-480C-A4C2-41953E209729}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeCorp.Data.Context", "AcmeCorp.Data.Context\AcmeCorp.Data.Context.csproj", "{FCAF9818-0097-480C-A4C2-41953E209729}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.Data.Repositories.Interfaces", "AcmeCorp.Data.Repositories.Interfaces\AcmeCorp.Data.Repositories.Interfaces.csproj", "{F496E1F4-253B-4FCE-BBF2-D7A2B24ACC31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeCorp.Data.Repositories.Interfaces", "AcmeCorp.Data.Repositories.Interfaces\AcmeCorp.Data.Repositories.Interfaces.csproj", "{F496E1F4-253B-4FCE-BBF2-D7A2B24ACC31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.Data.Repositories", "AcmeCorp.Data.Repositories\AcmeCorp.Data.Repositories.csproj", "{A4861DDA-FF62-4E8B-9EFB-E7FCAFBE2504}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.WebApi.Tests", "AcmeCorp.WebApi.Tests\AcmeCorp.WebApi.Tests.csproj", "{18E8C3B2-EBB9-4C99-A69E-7CDF7040F86B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeCorp.Data.Repositories", "AcmeCorp.Data.Repositories\AcmeCorp.Data.Repositories.csproj", "{A4861DDA-FF62-4E8B-9EFB-E7FCAFBE2504}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{A4861DDA-FF62-4E8B-9EFB-E7FCAFBE2504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4861DDA-FF62-4E8B-9EFB-E7FCAFBE2504}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4861DDA-FF62-4E8B-9EFB-E7FCAFBE2504}.Release|Any CPU.Build.0 = Release|Any CPU
-		{18E8C3B2-EBB9-4C99-A69E-7CDF7040F86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18E8C3B2-EBB9-4C99-A69E-7CDF7040F86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18E8C3B2-EBB9-4C99-A69E-7CDF7040F86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18E8C3B2-EBB9-4C99-A69E-7CDF7040F86B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

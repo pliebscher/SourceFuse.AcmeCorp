@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33927.249
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.WebApi.Tests", "AcmeCorp.WebApi.Tests\AcmeCorp.WebApi.Tests.csproj", "{60726802-1196-4958-B573-9AFA6EF0455E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeCorp.Data.Models", "..\AcmeCorp.Data.Models\AcmeCorp.Data.Models.csproj", "{094BEE89-5671-4885-BB61-8BD88304532E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60726802-1196-4958-B573-9AFA6EF0455E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60726802-1196-4958-B573-9AFA6EF0455E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60726802-1196-4958-B573-9AFA6EF0455E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60726802-1196-4958-B573-9AFA6EF0455E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{094BEE89-5671-4885-BB61-8BD88304532E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{094BEE89-5671-4885-BB61-8BD88304532E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{094BEE89-5671-4885-BB61-8BD88304532E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{094BEE89-5671-4885-BB61-8BD88304532E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8247A042-AD2B-4EEF-9135-0092CA1254E5}
+	EndGlobalSection
+EndGlobal

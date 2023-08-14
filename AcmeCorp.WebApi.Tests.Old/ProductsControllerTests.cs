@@ -19,7 +19,8 @@ namespace AcmeCorp.WebApi.Tests
         {
             _httpClient = new HttpClient
             {
-                BaseAddress = new Uri("http://localhost:14627/")
+                BaseAddress = new Uri("http://localhost:49162/") // Docker
+                //BaseAddress = new Uri("http://localhost:14627/") // IIS Express
             };
 
             _httpClient.DefaultRequestHeaders.Add("XApiKey", _apiKey);
