@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.Data.Repositories.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.Data.Repositories", "AcmeCorp.Data.Repositories\AcmeCorp.Data.Repositories.csproj", "{A4861DDA-FF62-4E8B-9EFB-E7FCAFBE2504}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.Data.Repositories.Mocks", "AcmeCorp.Data.Repositories.Mocks\AcmeCorp.Data.Repositories.Mocks.csproj", "{CA3DC894-F670-4D19-B7DE-DFBFC21EA71E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeCorp.WebApi.Tests", "AcmeCorp.WebApi.Tests\AcmeCorp.WebApi.Tests.csproj", "{18E8C3B2-EBB9-4C99-A69E-7CDF7040F86B}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{A4861DDA-FF62-4E8B-9EFB-E7FCAFBE2504}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4861DDA-FF62-4E8B-9EFB-E7FCAFBE2504}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4861DDA-FF62-4E8B-9EFB-E7FCAFBE2504}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CA3DC894-F670-4D19-B7DE-DFBFC21EA71E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA3DC894-F670-4D19-B7DE-DFBFC21EA71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA3DC894-F670-4D19-B7DE-DFBFC21EA71E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA3DC894-F670-4D19-B7DE-DFBFC21EA71E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{18E8C3B2-EBB9-4C99-A69E-7CDF7040F86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{18E8C3B2-EBB9-4C99-A69E-7CDF7040F86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18E8C3B2-EBB9-4C99-A69E-7CDF7040F86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
