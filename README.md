@@ -16,4 +16,9 @@ Execution Notes:
 
 - Solution was built in Visual Studio 2022 targeting the .net 7 runtime.
 - Container 1 exposes a .net WebApi with Swagger and API key authentication.
-- Container 2 is Sql Server Exoress Edition.
+- Container 2 is Sql Server Express Edition.
+
+Considerations:
+
+- Migrations are not used.
+- For demonstration purposes, only a handful of Unit and Integration tests were created.
