@@ -22,6 +22,7 @@ Considerations:
 
 - Database migrations are not used. The database is seeded with sample data when first created by Entity Framework.
 - Unit testing Async API controller methods in MS Test does not work so only end-to-end integration tests are inlcuded.
+- Integration tests are located in AcmeCorp.WebApi.Tests solution/Project and should be executed against a running API instance.
 - A more complex version of this system would include a Service layer that would require robust Unit testing.
 - For demonstration purposes and in the interest of time, only a handful of Integration tests are included.
 - Exception hanling is minimal.
