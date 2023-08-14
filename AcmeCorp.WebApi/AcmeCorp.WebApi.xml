@@ -69,14 +69,14 @@
             <param name="id"></param>
             <returns>A Customer</returns>
         </member>
-        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.PutCustomer(AcmeCorp.Data.Models.Customer)">
+        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.UpdateCustomer(AcmeCorp.Data.Models.Customer)">
             <summary>
             Update a Customer
             </summary>
             <param name="customer"></param>
             <returns>The updated Customer</returns>
         </member>
-        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.PostCustomer(AcmeCorp.Data.Models.Customer)">
+        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.AddCustomer(AcmeCorp.Data.Models.Customer)">
             <summary>
             Create a new Customer
             </summary>
@@ -92,7 +92,7 @@
         </member>
         <member name="T:AcmeCorp.WebApi.Controllers.OrderItemsController">
             <summary>
-            Add/Remove Items in a Order
+            Manage Orders
             </summary>
         </member>
         <member name="M:AcmeCorp.WebApi.Controllers.OrderItemsController.#ctor(AcmeCorp.Data.Repositories.Interfaces.IOrderRepository,AcmeCorp.Data.Repositories.Interfaces.IOrderItemRepository,Microsoft.Extensions.Logging.ILogger{AcmeCorp.WebApi.Controllers.OrderItemsController})">
@@ -109,6 +109,20 @@
             </summary>
             <param name="orderId"></param>
             <returns>List of Items in the Order</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.OrderItemsController.AddOrderItem(AcmeCorp.Data.Models.OrderItem)">
+            <summary>
+            Add an Item to an Order
+            </summary>
+            <param name="orderItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.OrderItemsController.DeleteOrderItem(System.Int32)">
+            <summary>
+            Delete an Item from an Order
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
         </member>
         <member name="T:AcmeCorp.WebApi.Controllers.OrdersController">
             <summary>
@@ -128,6 +142,13 @@
             </summary>
             <param name="id"></param>
             <returns>An Order</returns>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Controllers.OrdersController.GetOrders(System.Int32)">
+            <summary>
+            Gets all the Contacts orders
+            </summary>
+            <param name="customerId"></param>
+            <returns>A list of Orders</returns>
         </member>
         <member name="M:AcmeCorp.WebApi.Controllers.OrdersController.CreateOrder(AcmeCorp.Data.Models.Order)">
             <summary>
@@ -159,6 +180,18 @@
             Register dependencies for Controller injections...
             </summary>
             <param name="services"></param>
+        </member>
+        <member name="T:AcmeCorp.WebApi.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:AcmeCorp.WebApi.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <exception cref="T:System.InvalidOperationException"></exception>
         </member>
     </members>
 </doc>

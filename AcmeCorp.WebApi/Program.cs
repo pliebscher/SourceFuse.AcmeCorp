@@ -1,26 +1,29 @@
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Extensions;
-
 using System.Net;
 
-using AcmeCorp.Data.Models;
-using Microsoft.Extensions.DependencyInjection;
 using AcmeCorp.Data.Context;
 using AcmeCorp.WebApi.Middleware;
 
 namespace AcmeCorp.WebApi
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="args"></param>
+        /// <exception cref="InvalidOperationException"></exception>
         public static void Main(string[] args)
-        {
-     
+        {            
+            var builder = WebApplication.CreateBuilder(args);
+
             // Ignore cert errors for cross contaner development...
             ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => true;
-
-            var builder = WebApplication.CreateBuilder(args);
 
             // Setup logging injection...
             builder.Logging.ClearProviders();
@@ -30,7 +33,6 @@ namespace AcmeCorp.WebApi
             builder.Services.AddDbContext<AcmeCorpDataContext>(options =>     
                 options.UseSqlServer(builder.Configuration.GetConnectionString("AcmeCorpDataContext") ?? throw new InvalidOperationException("Connection string 'AcmeCorpDataContext' not found."))
             );
-
             
             builder.Services.AddControllers();            
             builder.Services.AddEndpointsApiExplorer();
@@ -78,11 +80,11 @@ namespace AcmeCorp.WebApi
             app.UseAuthorization();
             app.UseMiddleware<ApiKeyMiddleware>();
 
-            app.MapControllers();
-            
+            app.MapControllers();            
 
             app.Run();
         }
+
     }
 
 

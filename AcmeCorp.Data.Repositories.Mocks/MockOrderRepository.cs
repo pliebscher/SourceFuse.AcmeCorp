@@ -1,4 +1,6 @@
-﻿using AcmeCorp.Data.Models;
+﻿using System.Collections.Concurrent;
+
+using AcmeCorp.Data.Models;
 using AcmeCorp.Data.Repositories.Interfaces;
 
 namespace AcmeCorp.Data.Repositories.Mocks
@@ -15,7 +17,7 @@ namespace AcmeCorp.Data.Repositories.Mocks
 
         public Task<Order> AddOrder(Order order)
         {
-            _orders.Add(order.Id, order);
+            _orders.TryAdd(order.Id, order);
             return new Task<Order>(() => order);
         }
 

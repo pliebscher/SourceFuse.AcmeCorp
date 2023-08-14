@@ -46,6 +46,25 @@ namespace AcmeCorp.WebApi.Controllers
         }
 
         /// <summary>
+        /// Gets all the Contacts orders
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns>A list of Orders</returns>
+        [HttpGet("{customerId}")]
+        public async Task<ActionResult<List<Order>>> GetOrders(int customerId)
+        {
+            var orders = await _orderRepository.GetOrders(customerId);
+
+            if (orders == null || orders?.Count == 0)
+            {
+                _logger.LogWarning("Orders Not Found: " + customerId);
+                return NotFound();
+            }
+
+            return orders;
+        }
+
+        /// <summary>
         /// Create a new Order
         /// </summary>
         /// <param name="order"></param>
