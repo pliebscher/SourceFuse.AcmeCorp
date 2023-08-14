@@ -5,7 +5,7 @@ namespace AcmeCorp.Data.Models
 {
     public class Order
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Required]
         public int Id { get; set; }
 
