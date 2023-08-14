@@ -11,24 +11,53 @@ namespace AcmeCorp.Data.Repositories
         {
         }
 
-        public Task<Order> AddOrder(Order order)
+        public async Task<Order> AddOrder(Order order)
         {
-            throw new NotImplementedException();
+            Context.Order.Add(order);
+            await Context.SaveChangesAsync();
+            return order;
         }
 
-        public Task<bool> DeleteOrder(int id)
+        public async Task<bool> DeleteOrder(int id)
         {
-            throw new NotImplementedException();
+            var order = await Context.Order.FindAsync(id);
+
+            if (order == null)
+                return false;
+
+            Context.Order.Remove(order);
+            await Context.SaveChangesAsync();
+
+            return true;
         }
 
-        public Task<Order> GetOrder(int Id)
+        public async Task<Order> GetOrder(int id)
         {
-            throw new NotImplementedException();
+            return await Context.Order.FindAsync(id);
         }
 
-        public Task<Order> UpdateOrder(Order order)
+        public async Task<List<Order>> GetOrders(int contactId)
         {
-            throw new NotImplementedException();
+            var orders = await Context.Order.ToListAsync();
+            var ordersWithContactId = orders.Where((order) => order.ShipToContactId == contactId);
+            return new List<Order>(ordersWithContactId);
+        }
+
+        public async Task<Order> UpdateOrder(Order order)
+        {
+            Context.Entry(order).State = EntityState.Modified;
+
+            try
+            {
+                await Context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                // TODO: This needs to be handled...
+                throw;
+            }
+
+            return order;
         }
     }
 }

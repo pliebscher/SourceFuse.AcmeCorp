@@ -25,9 +25,15 @@ namespace AcmeCorp.Data.Repositories.Mocks
             return new Task<bool>(() => removed); 
         }
 
-        public Task<Order> GetOrder(int Id)
+        public Task<Order> GetOrder(int id)
         {
-            return new Task<Order>(() => _orders[Id]);
+            return new Task<Order>(() => _orders[id]);
+        }
+
+        public Task<List<Order>> GetOrders(int contactId)
+        {
+            var orders = new List<Order>(_orders.Values.Where((order) => order.ShipToContactId == contactId).ToList());
+            return new Task<List<Order>>(() => orders);
         }
 
         public Task<Order> UpdateOrder(Order order)

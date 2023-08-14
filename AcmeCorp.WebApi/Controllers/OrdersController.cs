@@ -45,5 +45,17 @@ namespace AcmeCorp.WebApi.Controllers
             return order;
         }
 
+        /// <summary>
+        /// Create a new Order
+        /// </summary>
+        /// <param name="order"></param>
+        /// <returns>The new Order</returns>
+        [HttpPost]
+        public async Task<ActionResult<Order>> CreateOrder(Order order)
+        {
+            Order newOrder = await _orderRepository.AddOrder(order);
+            return CreatedAtAction("GetOrder", new { id = newOrder.Id }, newOrder);
+        }
+
     }
 }

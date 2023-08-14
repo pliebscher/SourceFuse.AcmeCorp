@@ -12,11 +12,18 @@ namespace AcmeCorp.Data.Repositories.Interfaces
         public Task<Order> AddOrder(Order order);
 
         /// <summary>
-        /// Get a Contact 
+        /// Get an Order 
         /// </summary>
         /// <param name="Id"></param>
         /// <returns>An Order</returns>
-        public Task<Order> GetOrder(int Id);
+        public Task<Order> GetOrder(int id);
+
+        /// <summary>
+        /// Get all Orders for a Contact 
+        /// </summary>
+        /// <param name="contactId"></param>
+        /// <returns>An Order</returns>
+        public Task<List<Order>> GetOrders(int contactId);
 
         /// <summary>
         /// Update an Order
