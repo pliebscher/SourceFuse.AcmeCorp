@@ -10,7 +10,7 @@ services:
   backend-db:
     image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
-      SA_PASSWORD: my_strong_password
+      SA_PASSWORD: 4Adm1n23!
       ACCEPT_EULA: Y
       MSSQL_PID: Express
     ports:
