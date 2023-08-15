@@ -38,7 +38,7 @@ namespace AcmeCorp.WebApi
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "AcmeCorp Demo API", Version = "2023.8.0" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "SourceFuse - AcmeCorp Demo API", Version = "2023.08.15.00" });
                 
                 c.AddSecurityDefinition("ApiKey", new OpenApiSecurityScheme
                 {

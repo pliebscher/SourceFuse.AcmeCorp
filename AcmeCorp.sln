@@ -13,6 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeCorp.Data.Repositories.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AcmeCorp.Data.Repositories", "AcmeCorp.Data.Repositories\AcmeCorp.Data.Repositories.csproj", "{A4861DDA-FF62-4E8B-9EFB-E7FCAFBE2504}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{65903125-9727-4B6E-A03F-862C4B46DFC5}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

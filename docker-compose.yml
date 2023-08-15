@@ -1,0 +1,17 @@
+version: '3'
+services:
+  frontend-api:
+    image: pliebscher/sourcefuse.acmecorp.webapi:latest
+    ports:
+      - "80:80"
+    depends_on:
+      - backend-db
+
+  backend-db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: my_strong_password
+      ACCEPT_EULA: Y
+      MSSQL_PID: Express
+    ports:
+      - "1433:1433"
