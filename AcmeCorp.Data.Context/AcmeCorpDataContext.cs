@@ -17,7 +17,7 @@ namespace AcmeCorp.Data.Context
 
             // Add seed data for testing... The tests would generally do this and then drop the entire test DB when completed.
             modelBuilder.Entity<Customer>().HasData(
-              new Customer { Id = 1, Name = "SourceFusion, Inc." },
+              new Customer { Id = 1, Name = "SourceFuse, Inc." },
               new Customer { Id = 2, Name = "Bigfoot Insurance, Inc." }
             );
 
