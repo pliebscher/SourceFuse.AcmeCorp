@@ -76,7 +76,7 @@
             <param name="customer"></param>
             <returns>The updated Customer</returns>
         </member>
-        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.AddCustomer(AcmeCorp.Data.Models.Customer)">
+        <member name="M:AcmeCorp.WebApi.Controllers.CustomersController.CreateCustomer(AcmeCorp.Data.Models.Customer)">
             <summary>
             Create a new Customer
             </summary>
@@ -147,7 +147,7 @@
             <summary>
             Gets all the Contacts orders
             </summary>
-            <param name="customerId"></param>
+            <param name="contactId"></param>
             <returns>A list of Orders</returns>
         </member>
         <member name="M:AcmeCorp.WebApi.Controllers.OrdersController.CreateOrder(AcmeCorp.Data.Models.Order)">

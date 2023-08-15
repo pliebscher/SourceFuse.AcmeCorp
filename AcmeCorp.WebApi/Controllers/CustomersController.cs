@@ -79,7 +79,7 @@ namespace AcmeCorp.WebApi.Controllers
         /// <param name="customer"></param>
         /// <returns>The new Customer</returns>
         [HttpPost]
-        public async Task<ActionResult<Customer>> AddCustomer(Customer customer)
+        public async Task<ActionResult<Customer>> CreateCustomer(Customer customer)
         {
             Customer newCustomer = await _customerRepository.AddCustomer(customer);
             return CreatedAtAction("GetCustomer", new { id = newCustomer.Id }, newCustomer);

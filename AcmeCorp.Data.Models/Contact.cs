@@ -9,6 +9,9 @@ namespace AcmeCorp.Data.Models
         [Required]
         public int Id { get; set; }
         [Required]
+        [ForeignKey(nameof(Customer.Id))]
+        public int CustomerId { get; set; }
+        [Required]
         public string FirstName { get; set; } = string.Empty;
         [Required]
         public string LastName { get; set; } = string.Empty;

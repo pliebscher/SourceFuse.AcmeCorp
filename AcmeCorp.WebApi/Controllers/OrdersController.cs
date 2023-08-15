@@ -48,16 +48,16 @@ namespace AcmeCorp.WebApi.Controllers
         /// <summary>
         /// Gets all the Contacts orders
         /// </summary>
-        /// <param name="customerId"></param>
+        /// <param name="contactId"></param>
         /// <returns>A list of Orders</returns>
-        [HttpGet("{customerId}")]
-        public async Task<ActionResult<List<Order>>> GetOrders(int customerId)
+        [HttpGet("/Contact/{contactId}")]
+        public async Task<ActionResult<List<Order>>> GetOrders(int contactId)
         {
-            var orders = await _orderRepository.GetOrders(customerId);
+            var orders = await _orderRepository.GetOrders(contactId);
 
             if (orders == null || orders?.Count == 0)
             {
-                _logger.LogWarning("Orders Not Found: " + customerId);
+                _logger.LogWarning("Orders Not Found: " + contactId);
                 return NotFound();
             }
 
