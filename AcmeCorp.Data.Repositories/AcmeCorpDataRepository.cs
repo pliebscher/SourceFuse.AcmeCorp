@@ -4,7 +4,7 @@ using AcmeCorp.Data.Context;
 namespace AcmeCorp.Data.Repositories
 {
     /// <summary>
-    /// Abstract repository to provide the DbContact to all other data repo's
+    /// Abstract repository to provide the DataContext to all other data repo's
     /// </summary>
     public abstract class AcmeCorpDataRepository
     {
