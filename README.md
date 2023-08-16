@@ -22,7 +22,7 @@ Implementation Notes:
 
 Considerations:
 
-- There are know issues: https://github.com/pliebscher/SourceFuse.AcmeCorp/issues
+- There are known issues: https://github.com/pliebscher/SourceFuse.AcmeCorp/issues
 - Database migrations are not used. The database is seeded with sample data when first created by Entity Framework.
 - Unit testing async API controller methods and MSTest don't play well together. **
 - Integration tests are located in AcmeCorp.WebApi.Tests solution/Project and should be executed against a running API instance.
