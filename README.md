@@ -18,7 +18,7 @@ Implementation Notes:
 - Container 1 exposes a .NET WebApi with Swagger and API key authentication. The demo API Key is: pgH7QzFHJx4w46fI~5Uzi4RvtTwlEXp
 - Container 2 is Sql Server Express Edition.
 - After running 'docker-compose up', access the OpenAPI/Swagger interface at: http://localhost/swagger/index.html, Click the 'Authorize' button and enter the API key to test the API.
-- Took a stab at bonus AWS IaC, but the config is broken at the moment. So in the interest of time, turning is as-is. Determined to get it working though! **
+- Took a stab at bonus AWS IaC, but the config is broken at the moment. So in the interest of time, turning in as-is. Determined to get it working though! **
 
 Considerations:
 
